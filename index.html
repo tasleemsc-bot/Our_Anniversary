@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ♡</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080608;
+    color: #fff0f5;
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at top, #421526 0%, transparent 55%),
+      radial-gradient(circle at bottom, #260d1b 0%, #080608 65%);
+    z-index: -2;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #e68aa9;
+    background: linear-gradient(135deg, #792c4c, #351020);
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 15px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #e65b8a66;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.small-title {
+    color: #f5a0bd;
+    letter-spacing: 4px;
+    font-size: 11px;
+    text-transform: uppercase;
+    line-height: 1.8;
+}
+
+.main-heart {
+    color: #ff709e;
+    font-size: 65px;
+    margin: 25px;
+    animation: heartbeat 1.5s infinite;
+    text-shadow: 0 0 30px #ff4d89;
+}
+
+h1 {
+    font-size: clamp(40px, 9vw, 75px);
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+h1 span, h2 span {
+    color: #f58eae;
+    font-style: italic;
+}
+
+.hero p {
+    color: #e2bfcc;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+.section {
+    width: min(700px, 92%);
+    margin: 35px auto;
+    padding: 30px 22px;
+    background: #170f15ef;
+    border: 1px solid #522339;
+    border-radius: 22px;
+    box-shadow: 0 0 35px #0005;
+}
+
+h2 {
+    text-align: center;
+    font-size: clamp(27px, 6vw, 38px);
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.center {
+    text-align: center;
+}
+
+.muted {
+    color: #c9aab7;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.counter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 25px 0;
+}
+
+.time-box {
+    background: #0b080b;
+    border: 1px solid #57263b;
+    border-radius: 14px;
+    padding: 16px 3px;
+    text-align: center;
+}
+
+.number {
+    color: #ff91b4;
+    font-family: Arial, sans-serif;
+    font-size: clamp(22px, 6vw, 35px);
+    display: block;
+}
+
+.unit {
+    color: #c9aab7;
+    font: 10px Arial, sans-serif;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 9px;
+    text-transform: uppercase;
+}
+
+.letter {
+    color: #f6e4eb;
+    font-size: 17px;
+    line-height: 1.95;
+}
+
+.letter p {
+    margin: 16px 0;
+}
+
+.signature {
+    color: #f58eae;
+    text-align: right;
+    font-size: 23px;
+    font-style: italic;
+    margin-top: 25px;
+}
+
+.ending {
+    text-align: center;
+    padding: 45px 20px;
+    line-height: 2;
+}
+
+.infinity {
+    color: #f58eae;
+    font-size: 65px;
+}
+
+footer {
+    text-align: center;
+    color: #9b7787;
+    padding: 25px;
+    font-size: 12px;
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    z-index: 5;
+    pointer-events: none;
+    animation: floatUp 6s linear forwards;
+}
+
+@keyframes heartbeat {
+    50% { transform: scale(1.15); }
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+/* 8 REASONS SECTION */
+
+.reason-heart {
+    display: block;
+    margin: 25px auto 12px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #ff709e;
+    font-size: 90px;
+    line-height: 1.3;
+    text-shadow: 0 0 15px #ff4d89,
+                 0 0 35px #ff4d8966;
+    animation: heartbeat 1.5s infinite;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.reason-heart:hover {
+    transform: scale(1.08);
+    box-shadow: none;
+}
+
+.reason-heart:active {
+    transform: scale(.9);
+}
+
+.reason-count {
+    color: #f5a0bd;
+    font: 12px Arial, sans-serif;
+    letter-spacing: 2px;
+    margin: 15px 0;
+}
+
+.reason-card {
+    max-width: 480px;
+    min-height: 155px;
+    margin: 20px auto;
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #0b080b;
+    border: 1px solid #a64c70;
+    border-radius: 18px;
+    box-shadow: 0 0 25px #e65b8a16;
+}
+
+.reason-card h3 {
+    color: #f58eae;
+    font-size: 23px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.reason-card p {
+    color: #f6e4eb;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.reason-card.reveal {
+    animation: reasonReveal .4s ease;
+}
+
+@keyframes reasonReveal {
+    from {
+        opacity: .25;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 380px) {
+    .section {
+        padding: 25px 13px;
+    }
+
+    .counter {
+        gap: 5px;
+    }
+
+    .unit {
+        font-size: 9px;
+    }
+
+    .letter {
+        font-size: 16px;
+    }
+
+    .reason-heart {
+        font-size: 78px;
+    }
+
+    .reason-card h3 {
+        font-size: 21px;
+    }
+
+    .reason-card p {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING SECTION -->
+
+<section class="hero">
+    <div class="small-title">
+        A little surprise for my favourite person
+    </div>
+
+    <div class="main-heart">♥</div>
+
+    <h1>For My <span>Love</span></h1>
+
+    <p>
+        Six years of memories, countless little moments,
+        and one heart that keeps choosing you.
+    </p>
+
+    <button onclick="openSurprise()">
+        Open Your Surprise ♡
+    </button>
+
+    <p class="muted" style="margin-top:20px">
+        Made with love by your Love
+    </p>
+</section>
+
+<!-- ANNIVERSARY COUNTDOWN -->
+
+<section class="section center" id="timer">
+    <h2>Our Little <span>Forever</span></h2>
+
+    <p class="muted">
+        Together since 31 October 2020
+    </p>
+
+    <div class="counter">
+        <div class="time-box">
+            <span class="number" id="days">0</span>
+            <span class="unit">Days</span>
+        </div>
+
+        <div class="time-box">
+            <span class="number" id="hours">00</span>
+            <span class="unit">Hours</span>
+        </div>
+
+        <div class="time-box">
+            <span class="number" id="minutes">00</span>
+            <span class="unit">Minutes</span>
+        </div>
+
+        <div class="time-box">
+            <span class="number" id="seconds">00</span>
+            <span class="unit">Seconds</span>
+        </div>
+    </div>
+
+    <p class="muted">
+        Every second with you is a little piece of my favourite story. ♡
+    </p>
+</section>
+
+<!-- LOVE LETTER -->
+
+<section class="section" id="letter">
+    <h2>A Letter for <span>My Love</span></h2>
+
+    <div class="letter">
+        <p>To My Love, My Forever Favourite Person 💗🧸</p>
+
+        <p>
+            My sweetest Love, happy 6th anniversary to us! 🥹❤️
+            Can you believe it's been six years since our story began
+            on October 31, 2020? That day gave me something so precious
+            — you. And if I could go back in time, I'd still choose you,
+            a thousand times over. 💋
+        </p>
+
+        <p>
+            From our first moments to all the memories we've made,
+            every little thing has a special place in my heart.
+            Our silly conversations, cute nicknames, random laughter,
+            and those little moments when we forget the whole world
+            exists—these are the memories I want to keep forever. 🫶🏻💕
+        </p>
+
+        <p>
+            I love how we can be so childish together, tease each other
+            over silly things, and turn an ordinary day into something
+            special. Sometimes it's not the big moments I remember most,
+            but the tiniest things you do that make me smile like an idiot.
+            You're my favourite kind of happiness, My Love. 🧸💗
+        </p>
+
+        <p>
+            Of course, we haven't always been perfect. We've had our
+            little fights, misunderstandings, and emotional moments too.
+            But every experience has become part of our story. I hope we
+            keep learning, understanding, forgiving, and growing together,
+            one beautiful day at a time. 🥹❤️
+        </p>
+
+        <p>
+            Jaanu, I want so many more memories with you—more late-night
+            talks, more silly fights that end in laughter, more surprises,
+            more anniversaries, and more ordinary days that feel magical
+            because we're sharing them. I want our story to keep growing
+            into something even more beautiful. 🫂💖
+        </p>
+
+        <p>
+            If I could make one wish today, it would be to keep creating
+            beautiful memories with you, supporting each other's dreams,
+            understanding each other better, and cherishing all the little
+            things that make our bond special. I hope we always find our
+            way back to each other, even on the difficult days. 🥹💗
+        </p>
+
+        <p>
+            Happy 6 years, Meri Jaan! 💋 Six years of memories, countless
+            reasons to smile, and so many beautiful moments still waiting
+            for us. No matter how much time passes, you'll always be my
+            favourite person to annoy, my cutest little happiness,
+            and my forever favourite chapter.
+        </p>
+    </div>
+
+    <div class="signature">
+        Forever yours,<br>
+        Your Love ♡
+    </div>
+</section>
+
+<!-- 8 REASONS WHY I LOVE YOU -->
+
+<section class="section center" id="reasons">
+    <p class="small-title">A LITTLE SURPRISE FOR YOU</p>
+
+    <h2>8 Reasons Why I <span>Love You</span></h2>
+
+    <p class="muted">
+        Every heartbeat holds a little reason, Jaanu.<br>
+        Tap the glowing heart to discover them. ♡
+    </p>
+
+    <button type="button" id="reasonHeart" class="reason-heart"
+        aria-label="Reveal the next reason">
+        ♡
+    </button>
+
+    <p class="reason-count" id="reasonCount">
+        TAP TO BEGIN ♡
+    </p>
+
+    <div class="reason-card" id="reasonCard" aria-live="polite">
+        <h3 id="reasonTitle">A Little Piece of My Heart</h3>
+
+        <p id="reasonMessage">
+            I have eight little reasons to share with you.
+            Tap the heart to discover them. ♡
+        </p>
+    </div>
+
+    <p class="muted">
+        Eight reasons, one heart, endless love. ♡
+    </p>
+</section>
+
+<!-- ANNIVERSARY ENDING -->
+
+<section class="section ending" id="ending">
+    <div class="infinity">∞</div>
+
+    <h2>It's Always Going to Be <span>You</span></h2>
+
+    <p>
+        In every version of tomorrow,<br>
+        in every little lifetime I can imagine,<br>
+        I'd still look for you, My Love!
+    </p>
+
+    <h3 style="color:#f58eae; font-weight:normal; margin-top:20px">
+        Happy 6th Anniversary ♡
+    </h3>
+
+    <p class="muted">
+        31 October 2026<br>
+        A love note from Your Babe
+    </p>
+
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        Read Our Story Again ♡
+    </button>
+</section>
+
+<footer>
+    Made with love, just for My Love ♡
+</footer>
+
+<script>
+/* COUNTDOWN TIMER */
+
+const startDate =
+    new Date(2020, 9, 31, 0, 0, 0).getTime();
+
+function updateTimer() {
+    const elapsed = Math.max(0, Date.now() - startDate);
+    const totalSeconds = Math.floor(elapsed / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    document.getElementById("days").textContent =
+        days.toLocaleString();
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
+
+
+/* FLOATING HEARTS */
+
+function makeHearts() {
+    const symbols = ["♥", "♡", "✦"];
+
+    for (let i = 0; i < 18; i++) {
+        const heart = document.createElement("span");
+
+        heart.className = "floating-heart";
+        heart.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize =
+            (15 + Math.random() * 20) + "px";
+
+        heart.style.color =
+            Math.random() > 0.5 ? "#ff91b4" : "#ffdce6";
+
+        heart.style.animationDuration =
+            (4 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 8500);
+    }
+}
+
+
+/* OPENING SURPRISE */
+
+function openSurprise() {
+    makeHearts();
+
+    document.getElementById("timer").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+/* EIGHT REASONS WHY I LOVE YOU */
+
+const reasons = [
+    {
+        title: "The Way You Care",
+        message: "The little things you do to care for me mean more than words can ever explain. ♡"
+    },
+    {
+        title: "You Understand Me",
+        message: "You try to understand my feelings and the little things that make me who I am. ♡"
+    },
+    {
+        title: "You Make Me Smile",
+        message: "You have a special way of bringing a smile to my face, even on an ordinary day. ♡"
+    },
+    {
+        title: "Your Little Things",
+        message: "It's the tiny things you do, sometimes without even noticing, that make you so special to me. ♡"
+    },
+    {
+        title: "The Comfort You Give Me",
+        message: "Talking to you brings me comfort, and I love being able to be myself around you. ♡"
+    },
+    {
+        title: "The Way You Make Me Feel",
+        message: "You make me feel cared for, appreciated, and special in your own beautiful way. ♡"
+    },
+    {
+        title: "Your Efforts",
+        message: "I notice the effort you make, and every little effort means something precious to me. ♡"
+    },
+    {
+        title: "Simply Because You're You",
+        message: "I don't need one perfect reason to love you. I love you for the person you are, Jaanu. ♡"
+    }
+];
+
+let currentReason = 0;
+let finalMessageShown = false;
+
+const reasonHeart = document.getElementById("reasonHeart");
+const reasonTitle = document.getElementById("reasonTitle");
+const reasonMessage = document.getElementById("reasonMessage");
+const reasonCount = document.getElementById("reasonCount");
+const reasonCard = document.getElementById("reasonCard");
+
+reasonHeart.addEventListener("click", function () {
+
+    if (finalMessageShown) {
+        currentReason = 0;
+        finalMessageShown = false;
+    }
+
+    if (currentReason < reasons.length) {
+        const reason = reasons[currentReason];
+
+        reasonTitle.textContent = reason.title;
+        reasonMessage.textContent = reason.message;
+
+        reasonCount.textContent =
+            `REASON ${currentReason + 1} OF 8`;
+
+        currentReason++;
+
+        reasonCard.classList.remove("reveal");
+        void reasonCard.offsetWidth;
+        reasonCard.classList.add("reveal");
+
+        makeHearts();
+
+        if (currentReason === reasons.length) {
+            reasonCount.textContent =
+                "ALL 8 REASONS REVEALED ♡";
+        }
+
+    } else {
+        reasonTitle.textContent = "And One Little Truth...";
+
+        reasonMessage.textContent =
+            "Jaanu, these are just eight reasons. " +
+            "There are so many more little things I love about you. " +
+            "Happy 6th Anniversary! ♡";
+
+        reasonCount.textContent =
+            "A LITTLE MESSAGE FROM MY HEART ♡";
+
+        reasonCard.classList.remove("reveal");
+        void reasonCard.offsetWidth;
+        reasonCard.classList.add("reveal");
+
+        currentReason = 0;
+        finalMessageShown = true;
+
+        makeHearts();
+    }
+});
+</script>
+
+</body>
+</html>
